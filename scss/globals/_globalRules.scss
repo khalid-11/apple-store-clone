@@ -1,0 +1,44 @@
+@use "../unit/" as u;
+@import "../../fonts/fonts.css";
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  box-sizing: border-box;
+  font-family: helvetica, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f7;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 980px;
+  // padding-left: max(22px, env(safe-area-inset-left));
+  // padding-right: max(22px, env(safe-area-inset-right));
+  padding-inline: 22px;
+
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,296 @@
+@use "../unit/" as u;
+
+.main {
+  .main-nav {
+    @include u.breakpoint-up(medium) {
+      margin: 0 auto;
+    }
+    .container {
+      .navigation-list {
+        min-width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        margin: 0 -9px;
+
+        .navlinks {
+          display: none;
+          // height: 100%;
+          @include u.breakpoint-up(medium) {
+            display: contents;
+          }
+        }
+        .logo {
+          flex: 1;
+          a {
+            justify-content: flex-start;
+          }
+          @include u.breakpoint-up(medium) {
+            flex: 0;
+          }
+        }
+        li {
+          box-sizing: border-box;
+          line-height: 1;
+          height: 44px;
+          padding: 0 9px;
+          @include u.breakpoint-down(medium) {
+            width: 48px;
+          }
+        }
+
+        a {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: nowrap;
+          font-size: 12px;
+          letter-spacing: 0.3px;
+          color: #494949;
+          transition: fill 0.3s linear;
+          // line-height: 1.2353641176;
+          svg {
+            @include u.breakpoint-down(medium) {
+              width: 18px;
+              height: 53px;
+            }
+          }
+        }
+        a:hover {
+          color: #000 !important;
+        }
+        a:hover svg {
+          fill: #000 !important;
+        }
+        .hmbr {
+          width: 48px;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          @include u.breakpoint-up(medium) {
+            display: none;
+          }
+          a {
+            overflow: hidden;
+            width: 18px;
+            height: 14px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 18px;
+            animation: hmbr-transition 0.3s forwards;
+            span {
+              display: block;
+              width: 80%;
+              height: 1.2px;
+              background-color: #494949;
+              border-radius: 1px;
+              transition: background-color 0.3s linear;
+            }
+            .hmbr:hover a span {
+              background-color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .text-content-wrapper {
+    background-color: #fff;
+    text-align: center;
+    padding: 13px 0;
+    p {
+      color: #000;
+      padding: 3px 0;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.224px;
+      line-height: 20px;
+      a {
+        color: #06c;
+      }
+    }
+  }
+}
+
+.banner {
+  &-intro {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    @include u.breakpoint-up(medium) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &-text {
+    font-size: clamp(u.rem(32), 1rem + 2vw, u.rem(48));
+    font-weight: 900;
+    max-width: 640px;
+    color: #6e6e73;
+    line-height: 1.08349;
+    padding-top: 56px;
+    padding-bottom: 24px;
+    @include u.breakpoint-up(medium) {
+      padding: 80px 0 64px;
+    }
+  }
+  &-help-wrapper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 28px;
+    @include u.breakpoint-up(medium) {
+      padding: 90px 0 54px;
+    }
+    .banner-help {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 16px;
+      .image {
+        width: 35px;
+        margin-right: 8px;
+      }
+      .text {
+        font-size: 14px;
+        line-height: 1.42859;
+
+        h4 {
+          font-weight: 700;
+          letter-spacing: 1.1px;
+          color: #1d1d1f;
+        }
+        a {
+          font-weight: 500;
+          letter-spacing: 0.5px;
+          color: #06c;
+        }
+      }
+    }
+  }
+}
+
+.header-slider {
+  padding: 10px 0 62px;
+  width: 100%;
+  vertical-align: top;
+  display: inline-flex;
+  scrollbar-width: none;
+  overflow-x: scroll;
+  .products-wrapper {
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+  }
+  .products-holder {
+    @include u.breakpoint-up(medium) {
+      transform: translateX(20vw);
+    }
+    width: 100%;
+  }
+  .product {
+    &-card {
+      padding: 18px 8px 16px;
+      min-width: 130px;
+    }
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    &-img {
+      img {
+        width: 120px;
+        max-width: 100%;
+      }
+    }
+    &-info {
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.8;
+      color: black;
+      letter-spacing: 0.1px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.the-latest {
+  .title {
+    padding-bottom: 14px;
+    h2 {
+      font-size: 28px;
+      line-height: 1.14286;
+      font-weight: 600;
+      letter-spacing: 0.007em;
+      color: #6e6e73;
+      span {
+        color: black;
+      }
+    }
+  }
+
+  .latest-slider {
+    &-wrapper {
+      padding: 10px 0 40px;
+      display: flex;
+      align-items: center;
+      overflow-x: scroll;
+      scrollbar-width: none;
+      scrollbar-color: transparent;
+    }
+    &-card {
+      margin-right: 20px;
+      width: 404px;
+      min-width: 404px;
+      position: relative;
+      border-radius: 20px;
+      box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+    &-img {
+      img {
+        border-radius: 20px;
+        max-width: 100%;
+      }
+    }
+    &-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 30px;
+    }
+    .text-light {
+      color: #fff;
+    }
+    &-suptitle {
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 1.33337;
+      margin-bottom: 0.4rem;
+    }
+    &-title {
+      font-size: 28px;
+    }
+    &-desc {
+    }
+  }
+}
